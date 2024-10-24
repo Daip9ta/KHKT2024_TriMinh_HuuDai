@@ -17,14 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
         output += `${key.replace(/([A-Z])/g, ' $1')}: ${data[key]}\n`;
       }
     }
-    ouput += "\nĐây là đơn về sức khỏe của tôi thời gian gần đây bạn có thể cho tôi biết những vấn đề hay bệnh mà tôi đang gặp phải được không?";
+    output += "\nĐây là đơn về sức khỏe của tôi thời gian gần đây bạn có thể cho tôi biết những vấn đề hay bệnh mà tôi đang gặp phải được không?";
+
     // Send the output to ChatGPT API using CORS proxy
     try {
       const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Dat Cai Anh guiwr vao hehe' 
+          'Authorization': 'Bearer API_KEY' 
         },
         body: JSON.stringify({
           model: 'gpt-3.5-turbo',
